@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Transvip">
+  <method>
+  
+ <test name=" Admin Login " >
+   <classes>
+       <class name="testcases.cl_transvip_loginTest" />
+   </classes>
+ 
+</test>
+
+
+
+	</method>
+</suite>

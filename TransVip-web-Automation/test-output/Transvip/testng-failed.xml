@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Transvip]">
+  <test thread-count="5" name=" Create Booking (failed)">
+    <classes>
+      <class name="testcases.cl_transvip_createBookingTest">
+        <methods>
+          <include name="create_booking" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- testcases.cl_transvip_createBookingTest -->
+    </classes>
+  </test> <!--  Create Booking (failed) -->
+</suite> <!-- Failed suite [Transvip] -->

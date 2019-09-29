@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Sylvan]">
+  <test name="Browse Tutor(failed)">
+    <classes>
+      <class name="testcases.BrowseTutorTest">
+        <methods>
+          <include name="BrowseTutor1" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- testcases.BrowseTutorTest -->
+    </classes>
+  </test> <!-- Browse Tutor(failed) -->
+  <test name=" tutor my session 2(failed)">
+    <classes>
+      <class name="testcases.TutorMysessionTest">
+        <methods>
+          <include name="TutorMysess"/>
+        </methods>
+      </class> <!-- testcases.TutorMysessionTest -->
+    </classes>
+  </test> <!--  tutor my session 2(failed) -->
+</suite> <!-- Failed suite [Sylvan] -->
