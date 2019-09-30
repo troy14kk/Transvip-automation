@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Transvip">
-              <span class="suite-name border-passed">Transvip</span>
+              <span class="suite-name border-failed">Transvip</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Transvip">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Transvip" class="hide-methods failed suite-Transvip"> (hide)</a> <!-- hide-methods failed suite-Transvip -->
+                      <a href="#" panel-name="suite-Transvip" class="show-methods failed suite-Transvip"> (show)</a> <!-- show-methods failed suite-Transvip -->
+                    </span>
+                    <div class="method-list-content failed suite-Transvip">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Transvip" title="testcases.cl_transvip_createBookingTest" hash-for-method="create_booking({DropoffAddress=Agustinas 640, Runmode=Y, PickupDate=17/10/2020, PickupAddress=Aeropuerto SCL, Round...)">create_booking({DropoffAddress=Agustinas 640, Runmode=Y, PickupDate=17/10/2020, PickupAddress=Aeropuerto SCL, Round...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Transvip -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +116,7 @@
                     <div class="method-list-content passed suite-Transvip">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Transvip" title="testcases.cl_transvip_loginTest" hash-for-method="login({Runmode=Y, AdminPassword=qwertyui, AdminEmail=shamik.chatterjee+1@jungleworks.com})">login({Runmode=Y, AdminPassword=qwertyui, AdminEmail=shamik.chatterjee+1@jungleworks.com})</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Transvip" title="testcases.cl_transvip_loginTest" hash-for-method="login({Runmode=Y, AdminPassword=123456789, AdminEmail=nakul.malik@click-labs.com})">login({Runmode=Y, AdminPassword=123456789, AdminEmail=nakul.malik@click-labs.com})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Transvip -->
@@ -117,6 +131,29 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Transvip" class="panel Transvip">
+          <div class="suite-Transvip-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testcases.cl_transvip_createBookingTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="create_booking({DropoffAddress=Agustinas 640, Runmode=Y, PickupDate=17/10/2020, PickupAddress=Aeropuerto SCL, Round...)">
+                  </a> <!-- create_booking({DropoffAddress=Agustinas 640, Runmode=Y, PickupDate=17/10/2020, PickupAddress=Aeropuerto SCL, Round...) -->
+                  <span class="method-name">create_booking</span>
+                  <span class="parameters">({DropoffAddress=Agustinas 640, Runmode=Y, PickupDate=17/10/2020, PickupAddress=Aeropuerto SCL, RoundTrip=0.0, PickupHour=10.0, PickupHint=Airport, CustomerEmail=shamik.chatterjee@jungleworks.com, paymentMethod=Efectivo Pesos, PickupMinute=30.0, serviceName=Taxi, bookingType=Programada, corporateName=Pruebas Sistema Enlace, NumberOfPassengers=2.0, Observation=Automated Test Booking, ForThirdPerson=1.0, Personal=0.0})</span>
+                  <div class="stack-trace">java.lang.StringIndexOutOfBoundsException: String index out of range: -4
+	at java.lang.String.substring(String.java:1927)
+	at pages.cl_transvip_createBooking.set_date_time(cl_transvip_createBooking.java:320)
+	at pages.cl_transvip_createBooking.createBooking(cl_transvip_createBooking.java:261)
+	at testcases.cl_transvip_createBookingTest.create_booking(cl_transvip_createBookingTest.java:26)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Transvip-class-failed -->
           <div class="suite-Transvip-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -125,10 +162,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="login({Runmode=Y, AdminPassword=qwertyui, AdminEmail=shamik.chatterjee+1@jungleworks.com})">
-                  </a> <!-- login({Runmode=Y, AdminPassword=qwertyui, AdminEmail=shamik.chatterjee+1@jungleworks.com}) -->
+                  <a name="login({Runmode=Y, AdminPassword=123456789, AdminEmail=nakul.malik@click-labs.com})">
+                  </a> <!-- login({Runmode=Y, AdminPassword=123456789, AdminEmail=nakul.malik@click-labs.com}) -->
                   <span class="method-name">login</span>
-                  <span class="parameters">({Runmode=Y, AdminPassword=qwertyui, AdminEmail=shamik.chatterjee+1@jungleworks.com})</span>
+                  <span class="parameters">({Runmode=Y, AdminPassword=123456789, AdminEmail=nakul.malik@click-labs.com})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +173,7 @@
         </div> <!-- panel Transvip -->
         <div panel-name="test-xml-Transvip" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/sticker-148/eclipse-workspace/TransVip-web-Automation/src/TransvipTestng.xml</span>
+            <span class="header-content">/Users/sticker-148/eclipse-workspace/Transvip-automation/TransVip-web-Automation/src/TransvipTestng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -148,6 +185,11 @@
       &lt;class name=&quot;testcases.cl_transvip_loginTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!--  Admin Login  --&gt;
+  &lt;test name=&quot; Create Booking Admin &quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;testcases.cl_transvip_createBookingTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!--  Create Booking Admin  --&gt;
 &lt;/suite&gt; &lt;!-- Transvip --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -160,6 +202,9 @@
             <ul>
               <li>
                 <span class="test-name"> Admin Login  (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name"> Create Booking Admin  (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,16 +230,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'login')
-data.setCell(0, 2, 'testcases.cl_transvip_loginTest')
-data.setCell(0, 3, 23980);
+data.setCell(0, 1, 'create_booking')
+data.setCell(0, 2, 'testcases.cl_transvip_createBookingTest')
+data.setCell(0, 3, 28528);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'login')
+data.setCell(1, 2, 'testcases.cl_transvip_loginTest')
+data.setCell(1, 3, 20885);
 window.suiteTableData['Transvip']= { tableData: data, tableDiv: 'times-div-Transvip'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 23 seconds</span>
+              <span class="suite-total-time">Total running time: 49 seconds</span>
               <div id="times-div-Transvip">
               </div> <!-- times-div-Transvip -->
             </div> <!-- times-div -->
@@ -226,8 +275,17 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
-                <span class="method-name">login({Runmode=Y, AdminPassword=qwertyui, AdminEmail=shamik.chatterjee+1@jungleworks.com})</span>
-                <span class="method-start">3433 ms</span>
+                <span class="method-name">login({Runmode=Y, AdminPassword=123456789, AdminEmail=nakul.malik@click-labs.com})</span>
+                <span class="method-start">2837 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testcases.cl_transvip_createBookingTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">create_booking({DropoffAddress=Agustinas 640, Runmode=Y, PickupDate=17/10/2020, PickupAddress=Aeropuerto SCL, Round...)</span>
+                <span class="method-start">24004 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

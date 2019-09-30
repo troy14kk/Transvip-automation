@@ -216,7 +216,10 @@ public class cl_transvip_createBooking  {
 //			 wait.until(ExpectedConditions.visibilityOf(loader_scope));
 			 Thread.sleep(3000);
 			 if(search_customer_suggestion.isDisplayed())
+				 {
 				 search_Customer.sendKeys(Keys.ENTER);
+				 System.out.println("Customer Selected----> "+customerEmail);
+				 }
 		 }
 		 catch(Exception e)
 		 {
@@ -225,7 +228,10 @@ public class cl_transvip_createBooking  {
 		 }
 	 Thread.sleep(3000);
 	 if(((int)Double.parseDouble(personal))==1)
+	 	{
 		 personal_radio.click();
+		 System.out.println("Personal Agreement Selected!");
+	 	}
 	 else
 		 {
 		 corporate_radio.click();
@@ -233,13 +239,16 @@ public class cl_transvip_createBooking  {
 		 corporate_dropdown.click();
 		 Select dropagreement=new Select(corporate_dropdown);
 		 dropagreement.selectByVisibleText(corporateName);
+		 System.out.println("Agreement selected----> "+corporateName);
 		 }
 	 wait.until(ExpectedConditions.visibilityOf(loader_scope));
 	 Select dropService=new Select(type_of_service_dropdown);
 	 dropService.selectByVisibleText(serviceName);
+	 System.out.println("Selected type of Service----> "+serviceName);
 	 
 	 passenger_count_create_booking.sendKeys(Integer.toString(((int)Double.parseDouble(numberOfPassengers))));
 	 
+	 System.out.println("Entered number of passengers---> "+numberOfPassengers);
 	 //Condition for scheduled booking
 	 
 	 if(bookingType.equals("Programada"))
@@ -256,20 +265,22 @@ public class cl_transvip_createBooking  {
 			 Thread.sleep(2000);
 			 pickup_address.sendKeys(Keys.ARROW_DOWN);
 			 pickup_address.sendKeys(Keys.ENTER);
-			 
+			 System.out.println("Pickup address entered----> "+pickupAddress);
 			 wait.until(ExpectedConditions.visibilityOf(loader_scope));
 
 			 //Pinkup hint entry
 			 pickup_hint_text.sendKeys(pickupHint);
 
 			 wait.until(ExpectedConditions.visibilityOf(loader_scope));
-
+			 System.out.println("Pickup Hint Entered----> "+pickupHint);
 			 
 			 //dropoff address entry
 			 dropoff_address.sendKeys(dropoffAddress);
 			 Thread.sleep(2000);
 			 dropoff_address.sendKeys(Keys.ARROW_DOWN);
 			 dropoff_address.sendKeys(Keys.ENTER);
+			 
+			 System.out.println("Drop-off address entered----> "+dropoffAddress);
 			 
 			 wait.until(ExpectedConditions.visibilityOf(loader_scope));
 
@@ -280,13 +291,14 @@ public class cl_transvip_createBooking  {
 			 payment_method_dropdown.sendKeys(paymentMethod);
 			 Thread.sleep(500);
 			 payment_method_dropdown.sendKeys(Keys.ENTER);
-			 
+			 System.out.println("Payment Method Selected----> "+paymentMethod);
 			 //Observation Entry
 			 booking_observations.sendKeys(observation);
-			 
+			 System.out.println("Observation Entered----> "+observation);
 			 Thread.sleep(2000);
 			 //SUBMIT BOOKING
 			 submit_button_createBooking.click();
+			 System.out.println("Create booking submit pressed!!");
 			 
 		 
 		 }	
@@ -301,7 +313,7 @@ public class cl_transvip_createBooking  {
         int month=Integer.parseInt(arr[1]);
         int year=Integer.parseInt(arr[2]);
         
-        System.out.println("INSIDE THE NEW FUNCTION!!");
+       // System.out.println("INSIDE THE NEW FUNCTION!!");
         
 		launch_exclusive_parent_calender.click();
 		String get_year= activate_year_toggle_exclusive.getText().toString();
@@ -316,18 +328,21 @@ public class cl_transvip_createBooking  {
 			activate_year_toggle_exclusive.click();
 			for(int i=0;i<(year-calender_year);i++)
 				next_year_exclusive.click();
-			
-			System.out.println("Year selected bro!");
-			// Select month 
-			String select_month=first_month_exclusive.toString()+"["+Integer.toString(month)+"]";
-			System.out.println("XPath for month=======>"+select_month);
-			driver.findElement(By.xpath(select_month)).click();			
-			System.out.println("Month selected bro!");
-			//Select date
-			String select_date= calender_first_date_exclusive.toString()+"["+Integer.toString(date)+"]";
-			driver.findElement(By.xpath(select_date)).click();
+		
+			String first_month=first_month_exclusive.toString();
+			String x[]=first_month.split(":");
+			String final_month=x[2];
+			final_month=(final_month.substring(1,final_month.length()-1))+"["+month+"]";
+			driver.findElement(By.xpath(final_month)).click();
 			
 			
+			String first_date=calender_first_date_exclusive.toString();
+			String y[]=first_date.split(":");
+			String final_date=y[2];
+			final_date=(final_date.substring(1,final_date.length()-1))+"["+date+"]";
+			driver.findElement(By.xpath(final_date)).click();
+			
+			System.out.println("Selected date----> "+pick_date);
 		}
 		
 	}

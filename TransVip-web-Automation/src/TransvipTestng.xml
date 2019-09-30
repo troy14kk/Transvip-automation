@@ -10,6 +10,12 @@
  
 </test>
 
+<test name=" Create Booking Admin " >
+   <classes>
+       <class name="testcases.cl_transvip_createBookingTest" />
+   </classes>
+ 
+</test>
 
 
 	</method>
