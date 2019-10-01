@@ -41,7 +41,7 @@ public class cl_transvip_login {
 	{
 		
 		driver.get("https://preprod-admin.transvip.cl");
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		admin_email.sendKeys(adminEmail);
 		admin_password.sendKeys(adminPassword);
 		login_button.click();
